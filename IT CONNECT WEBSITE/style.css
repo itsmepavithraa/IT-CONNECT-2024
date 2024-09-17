@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+html, body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100%; /* Ensure body and html cover the full viewport height */
+    background-color: black; /* Set the background color to black */
+    color: #f5f5f5; /* Default text color to white */
+}
+
+.navigation_bar {
+    height: 18vh; /* Height of the navigation bar */
+    width: 100%;
+    background-color: black; /* Ensure background is black */
+    background-size: cover;
+    background-position: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    color: #f5f5f5; /* Text color in the navigation */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #48cfcb;
+    transition: .3s;
+    text-decoration: underline;
+    text-decoration-color: #f5f5f5;
+    text-underline-offset: 5px; /* Adds space between text and underline */
+    border-bottom: 3px solid white; /* Simulates a bold underline */
+}
+
+button {
+    border: none;
+    background-color: #48cfcb;
+    padding: 12px 20px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: .4s;
+}
+
+button:hover {
+    background-color: black;
+    border: 3px solid #48cfcb;
+    color: #f5f5f5;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.main_part {
+    background-color: black; /* Ensure background is black */
+    width: 100%;
+    height: calc(100vh - 18vh); /* Adjust for the height of the navigation bar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Prevent content from overflowing */
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+}
+
+.rubik-glitch-regular {
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #f5f5f5; /* Text color */
+    font-size: 4vw; /* Medium font size */
+    display: flex;
+    align-items: center; /* Vertically center the image with the text */
+    max-width: 85vw; /* Ensure text does not exceed viewport width */
+    word-wrap: break-word; /* Break long words if needed */
+    margin: 0; /* Remove any margin around the text */
+    padding: 0; /* Remove any padding around the text */
+}
+
+.main_part h1 span {
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #48cfcb; /* Highlight color */
+}
+
+.main_part h1 img {
+    margin-left: 10px; /* Adds spacing between text and logo */
+    height: 10vw; /* Adjust this value to make the image larger */
+    width: auto; /* Maintain the aspect ratio of the image */
+}
+.timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+}
+.timer h1{
+    margin-bottom: 20px;
+    color: #f5f5f5; /* White color for the text */
+    font-size: 2rem; /* Adjust size as per your need */
+}
+.flipdown {
+    display: inline-block;
+    margin: 20px;
+}
+h1 {
+    color: #f5f5f5;
+}
+
+
+
+/* new code */
