@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>About Us</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: black;
+        }
+        .container{
+            min-height: 80vh;
+            width: 60%;
+            border: 8px solid cyan;
+            margin: 4rem auto;
+            border-radius: 5px;
+            box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.6);
+            position: relative;
+            background: url("Imgs/img2.jpg") center/cover fixed no-repeat;
+            transition: background 1s ease-in-out;         
+        }
+        .btn-left{
+            position: absolute;
+            top: 50%;
+            left: -2%;
+            background-color: white;
+            padding: .4em .6em;
+            border-radius: 2em;
+            transform: translateY(calc(-50%));
+            cursor: pointer;
+        }
+        .btn-right{
+            position: absolute;
+            top: 50%;
+            right: -2%;
+            background-color: white;
+            padding: .4em .6em;
+            border-radius: 2em;
+            transform: translateY(calc(-50%));
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="btn btn-left"><i class="fa-solid fa-caret-left"></i></a>
+        <a class="btn btn-right"><i class="fa-solid fa-caret-right"></i></a>
+    </div>
+
+
+
+
+<script> 
+    const container = document.querySelector('.container');
+    const btns = document.querySelectorAll('.btn')
+    const imgList = ["img1","img2","img3"]
+
+    let index=0
+    btns.forEach((button)=>{
+        button.addEventListener('click',()=>{
+            if(button.classList.contains('btn-left')){
+                index--;
+                if(index<0){
+                    index=imgList.length-1;
+                }
+                container.style.background = `url("Imgs/${imgList[index]}.jpg") center/cover fixed no-repeat`
+            }else{
+                index++;
+                if(index==imgList.length){
+                    index=0;
+                }
+                container.style.background = `url("Imgs/${imgList[index]}.jpg") center/cover fixed no-repeat`
+            }
+        })
+    })
+</script>
+</body>
+</html>

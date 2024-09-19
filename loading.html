@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT CONNECT</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+    <style>
+        /* Body Styling */
+        body {
+            background: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Loading Text Styling */
+        .loading {
+            width: fit-content;
+            margin: 15% auto 0;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: bolder;
+            letter-spacing: 0ch;
+            z-index: 1; /* Keep loading text above the video */
+        }
+
+        .loading span {
+            display: inline-block;
+            padding: 2px;
+        }
+
+        /* Loader Styling */
+        .loader {
+            width: 300px;
+            height: 40px;
+            border-radius: 22px;
+            color: linear-gradient(white, black);
+            border: 2px solid;
+            position: relative;
+            margin: 2% auto 0;
+            border-style: none;
+        }
+
+        .loader::before {
+            content: "";
+            position: absolute;
+            margin: 2px;
+            inset: 0 100% 0 0;
+            border-radius: inherit;
+            background: linear-gradient(white, black);
+            animation: loading 4s infinite;
+        }
+
+        @keyframes loading {
+            100% {
+                inset: 0;
+            }
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .loading {
+                font-size: 18px; /* Adjusted font size for mobile */
+            }
+
+            .loader {
+                width: 80%; /* Adjust loader width for mobile */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .loading {
+                font-size: 16px; /* Further adjusted for smaller screens */
+            }
+
+            .loader {
+                width: 90%; /* Adjust loader width for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="Imgs/loadingvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Loading Text and Loader -->
+    <div class="d-flex flex-column justify-content-center align-items-center vh-100">
+        <div class="loading text-center mb-3">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+
+        <!-- Loader Bar under the text -->
+        <div class="loader"></div>
+    </div>
+
+    <!-- JavaScript for Redirecting -->
+    <script>
+        // Redirect to main page after 4 seconds
+        setTimeout(function() {
+            window.location.href = 'index.html'; // Change this to your main page URL
+        }, 4000);
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
