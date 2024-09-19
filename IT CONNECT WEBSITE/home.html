@@ -1,16 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <style>
-        *{
-            background-color: wheat;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Symposium Home Page</title>
+  <style>
+    .custom-title {
+      background: linear-gradient(yellow, cyan);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .custom-card {
+      background: black;
+      border: 1px solid cyan;
+      border-radius: 20px;
+    }
+    .card-img-top {
+      border-radius: 20px 20px 0 0;
+      width: 100%; /* Make the image cover the full width */
+      height: auto; /* Maintain the aspect ratio */
+      object-fit: cover; /* Ensure the image covers the area */
+    }
+
+    .header {
+      background-color: black;
+      color: cyan;
+      border-bottom: 3px solid cyan;
+    }
+    .header img {
+      height: 42px;
+      width: 42px;
+      border: 2px solid cyan;
+      box-shadow: 5px 5px rgba(6, 4, 4, .5);
+      transition: transform 0.3s ease-in;
+    }
+    .header img:hover {
+      transform: scale(1.5);
+    }
+  </style>
 </head>
-<body>
-    
+<body class="bg-dark text-white">
+
+  <!-- Header -->
+  <header class="header p-3 mb-4 text-center">
+    <h1 class="display-4">IT Connect 2k24</h1>
+    <p class="lead">Welcome to IT CONNECT 2K24, where Innovation Meets Connection</p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row g-4">
+      <!-- About College Card -->
+      <div class="col-md-6">
+        <div class="card custom-card">
+          <img src="Imgs/newjmc.jpg" class="card-img-top" alt="College Image">
+          <div class="card-body">
+            <h2 class="custom-title">About Our College</h2>
+            <p class="card-text">
+              Jamal Mohamed College, founded in 1951, is an autonomous institution affiliated with Bharathidasan University, Tiruchirappalli. Spread over 87 acres, it was established as a minority institution to provide higher education to socially and economically disadvantaged communities. With a strong commitment to academic excellence and social responsibility, the college empowers students to reach their full potential."
+              The college is accredited with an A++ Grade by NAAC (4th Cycle) with a CGPA of 3.69/4 and recognized as a "College with Potential for Excellence" by the UGC.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Departments Card -->
+      <div class="col-md-6">
+        <div class="card custom-card">
+          <img src="Imgs/newdpt.jpg" class="card-img-top" alt="Departments Image">
+          <div class="card-body">
+            <h2 class="custom-title">Our Departments</h2>
+            <p class="card-text">
+              Established in 1986, the Department offers diverse programs including B.Sc., BCA, M.Sc., and MCA, with AICTE-approved intakes of 120 students annually. It features 7 government-aided and 58 self-financed faculty, advanced labs, over 600 computers, high-speed internet, and dedicated Wi-Fi. The Department is recognized for its excellent facilities and quality education, receiving praise from researchers and academicians. It also engages in research initiatives and industry collaborations to enhance student learning and career opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-3 mt-4 text-center">
+    <p>&copy;ITConnect2k24</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -3,119 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Details Cards</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: cursive;
         }
-        .container{
+
+        .container {
             min-height: 100vh;
             background: #08071d;
+            background: url("contactus.jpg") no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url("contactus.jpg") no-repeat center center/cover;
+            flex-direction: column;
         }
-        .container form{
-            width: 670px;
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-            border-radius: 15px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            flex-wrap: wrap;
-        }
-        .container form h1{
+
+        h1, h2 {
             color: #fff;
-            font-weight: 500;
-            margin-top: 20px;
-            width: 500px;
             text-align: center;
+            margin-bottom: 20px;
         }
-        .container form input{
-            width: 290px;
-            height: 40px;
-            padding-left: 10px;
-            outline: none;
-            border: none;
-            font-size: 15px;
-            margin-bottom: 10px;
-            background: none;
-            border-bottom: 2px solid #fff;
+
+        /* Card layout */
+        .cards-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+            gap: 20px;
         }
-        .container form input::placeholder{
-            color: #ddd;
+
+        .card {
+            width: 300px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex; /* Flexbox to center text */
+            justify-content: center; /* Horizontally center text */
+            align-items: center; /* Vertically center text */
         }
-        .container form #lastName,
-        .container form #mobile{
-            margin-left: 20px;
+
+        .card:hover {
+            transform: scale(1.1);
         }
-        .container form h1{
-            color: #fff;
-            font-weight: 300;
-            width: 600px;
-            margin-top: 20px;
+
+        /* Popup styling */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: rgba(255, 255, 255, 0.1);
+            background: url("contactus.jpg") no-repeat center center/cover; /* Same background as container */
+            backdrop-filter: blur(10px);
+            box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 20px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1000;
+            color: white; /* White text for better visibility */
         }
-        
-        .container form textarea{
-            background: none;
-            border: none;
-            border-bottom: 2px solid #fff;
-            color: #fff;
-            font-weight: 200;
-            font-size: 15px;
-            padding: 10px;
-            outline: none;
-            min-width: 600px;
-            min-height: 80px;
-            max-height: 80px;
+
+        .popup h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
         }
-        textarea::-webkit-scrollbar{
-            width: 1em;
-        }
-        textarea::-webkit-scrollbar-thum{
-            background-color: rgba(194, 194, 194, 0.713);
-        }
-        .container form #button{
-            border: none;
-            background: #fff;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-weight: 20px;
+
+        .popup p {
             font-size: 20px;
-            color: #333;
-            width: 100px;
-            padding: 0;
-            margin-right: 500px;
-            margin-bottom: 30px;
-            transition: 0.3s;
         }
-        .container form #button:hover{
-            opacity: 0.7;
+
+        .popup .close-btn {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-size: 18px;
         }
-        .container h4{
-            color: #ddd;
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            z-index: 999;
         }
-        
     </style>
 </head>
 <body>
-    <div class="container">
-        <form action="">
-            <h1>Contact Us Form</h1>
-            <input type="text" id="firstName" placeholder="First Name" required="">
-            <input type="text" id="lastName" placeholder="Last Name" required="">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="text" id="mobile" placeholder="Mobile" required="">
-            <h4>Type your message here...</h4>
-            <textarea required></textarea>
-            <input type="submit" value="send" id="button">
-        </form>
+
+<div class="container">
+    <h1>For Details</h1>
+    <h2>Programme Organizer</h2>
+
+    <!-- Cards grid layout -->
+    <div class="cards-wrapper">
+        <div class="card" data-info="Dr. S. Vaheedha Kfatheen, Dean of Science, 9442872389">Dr. S. Vaheedha Kfatheen, Dean of Science, 9442872389</div>
+        <div class="card" data-info="Ms. K. Sulthana, Associate Professor, 9865390145">Ms. K. Sulthana, Associate Professor, 9865390145</div>
+        <div class="card" data-info="Ms. J. Fathima Fourzia, Assistant Professor, 8072622760">Ms. J. Fathima Fourzia, Assistant Professor, 8072622760</div>
+        <div class="card" data-info="Ms. R. Senthamil Selvi, Assistant Professor, 9791380870">Ms. R. Senthamil Selvi, Assistant Professor, 9791380870</div>
     </div>
+</div>
+
+<!-- Popup -->
+<div class="overlay"></div>
+<div class="popup">
+    <h3 id="popupTitle"></h3>
+    <p id="popupContent"></p>
+    <button class="close-btn">Close</button>
+</div>
+
+<script>
+    // Get all cards
+    const cards = document.querySelectorAll('.card');
+    const popup = document.querySelector('.popup');
+    const popupTitle = document.getElementById('popupTitle');
+    const popupContent = document.getElementById('popupContent');
+    const overlay = document.querySelector('.overlay');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // Function to show the popup
+    function showPopup(title, content) {
+        popupTitle.textContent = title;
+        popupContent.textContent = content;
+        popup.style.display = 'flex';
+        overlay.style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+        popup.style.display = 'none';
+        overlay.style.display = 'none';
+    }
+
+    // Add click event listeners to all cards
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const info = card.getAttribute('data-info').split(', ');
+            const title = info[0];
+            const content = `${info[1]} - ${info[2]}`;
+            showPopup(title, content);
+        });
+    });
+
+    // Add click event listener to close button and overlay
+    closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', closePopup);
+</script>
+
 </body>
 </html>

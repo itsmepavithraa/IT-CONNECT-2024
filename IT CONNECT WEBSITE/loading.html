@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT CONNECT 2k24</title>
+    
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FlipDown CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Section -->
+    <div class="navigation_bar">
+        <nav>
+            <h2 class="logo"><img src="logo.jfif" alt="logo" width="100px" height="80px"></h2>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+            <button class="register-btn" onclick="window.location.href='register.html'" type="button">Register Now</button>
+        </nav>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main_part">
+        <h1 class="rubik-glitch-regular">
+            The <span>Symposium</span> <img src="logo.jfif" alt="logo"> Begins <span>Now</span>
+        </h1>
+    </div>
+
+    <!-- FlipDown Timer Section -->
+    <div class="timer">
+        <h1>Let the countdown begin</h1>
+        <div id="flipdown" class="flipdown"></div>
+        <div class="timer-labels">
+            <span id="days-label">Days</span>
+            <span id="hours-label">Hours</span>
+            <span id="minutes-label">Minutes</span>
+            <span id="seconds-label">Seconds</span>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p style="text-align: center;">&copy; 2024 IT CONNECT 2k24</p>
+        <p style="text-align: center;">
+            <a href="https://www.linkedin.com/in/mspavithraa" target="_blank">PAVITHRAA M S</a> | 
+            <a href="https://www.linkedin.com/in/sandya-thiruchelvam-6b444a2b4/" target="_blank">SANDYA T</a> | 
+            <a href="https://www.linkedin.com/in/priya-dharshini--v/" target="_blank">PRIYA DHARSHINI V</a>
+        </p>
+    </div>
+
+    <!-- FlipDown JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.js"></script>
+
+    <!-- Custom JS to Initialize FlipDown -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Target date: October 4th, 2024, 9:30 AM (in local time)
+            const targetDate = new Date('October 4, 2024 09:30:00').getTime() / 1000; // Convert to UNIX timestamp in seconds
+
+            // Initialize FlipDown timer
+            const flipdown = new FlipDown(targetDate)
+                .start()
+                .ifEnded(() => {
+                    document.querySelector(".flipdown").innerHTML = `<h2>Timer has Ended</h2>`;
+                });
+        });
+    </script>
+</body>
+</html>

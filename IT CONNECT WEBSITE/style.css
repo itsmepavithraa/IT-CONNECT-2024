@@ -136,6 +136,15 @@ h1 {
     color: #f5f5f5;
 }
 
-
-
-/* new code */
+.copyright p 
+    .copyright p {
+        color: #d3d3d3; /* Light grey color */
+        font-size: 0.9em; /* Slightly smaller font size */
+    }
+    .copyright a {
+        color: #d3d3d3;
+        text-decoration: none;
+    }
+    .copyright a:hover {
+        color: #ffffff;
+    }

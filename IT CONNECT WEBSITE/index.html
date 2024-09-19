@@ -1,75 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT CONNECT 2k24</title>
-    
-    <!-- Your Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT CONNECT</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+    <style>
+        /* Body Styling */
+        body {
+            background: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-    <!-- FlipDown CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css">
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Loading Text Styling */
+        .loading {
+            width: fit-content;
+            margin: 15% auto 0;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: bolder;
+            letter-spacing: 0ch;
+            z-index: 1; /* Keep loading text above the video */
+        }
+
+        .loading span {
+            display: inline-block;
+            padding: 2px;
+        }
+
+        /* Loader Styling */
+        .loader {
+            width: 300px;
+            height: 40px;
+            border-radius: 22px;
+            color: linear-gradient(white, black);
+            border: 2px solid;
+            position: relative;
+            margin: 2% auto 0;
+            border-style: none;
+        }
+
+        .loader::before {
+            content: "";
+            position: absolute;
+            margin: 2px;
+            inset: 0 100% 0 0;
+            border-radius: inherit;
+            background: linear-gradient(white, black);
+            animation: loading 4s infinite;
+        }
+
+        @keyframes loading {
+            100% {
+                inset: 0;
+            }
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .loading {
+                font-size: 18px; /* Adjusted font size for mobile */
+            }
+
+            .loader {
+                width: 80%; /* Adjust loader width for mobile */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .loading {
+                font-size: 16px; /* Further adjusted for smaller screens */
+            }
+
+            .loader {
+                width: 90%; /* Adjust loader width for smaller screens */
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation Section -->
-    <div class="navigation_bar">
-        <nav>
-            <h2 class="logo"><img src="logo.jfif" alt="logo" width="100px" height="80px"></h2>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="aboutus.html">About</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contactus.html">Contact Us</a></li>
-            </ul>
-            <button class="register-btn" onclick="window.location.href='register.html'" type="button">Register Now</button>
-        </nav>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="Imgs/loadingvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
-    <!-- Main Content Section -->
-    <div class="main_part">
-        <h1 class="rubik-glitch-regular">
-            The <span> Symposium </span><img src="logo.jfif" alt="logo"> Begins <span> Now </span>
-        </h1>
+    <!-- Loading Text and Loader -->
+    <div class="d-flex flex-column justify-content-center align-items-center vh-100">
+        <div class="loading text-center mb-3">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+
+        <!-- Loader Bar under the text -->
+        <div class="loader"></div>
     </div>
 
-    <!-- Here is the changing code starts -->
-    <!-- FlipDown Timer Section (Isolated) -->
-<div class="timer">
-    <h1>Let the countdown begin</h1>
-    <div id="flipdown" class="flipdown"></div>
-    <!-- Add Labels for Days, Hours, Minutes, Seconds below the respective flipdown sections -->
-    <div class="timer-labels">
-        <span id="days-label">Days</span>
-        <span id="hours-label">Hours</span>
-        <span id="minutes-label">Minutes</span>
-        <span id="seconds-label">Seconds</span>
-    </div>
-</div>
+    <!-- JavaScript for Redirecting -->
+    <script>
+        // Redirect to main page after 4 seconds
+        setTimeout(function() {
+            window.location.href = 'loading.html'; // Change this to your main page URL
+        }, 4000);
+    </script>
 
-<!-- FlipDown JS -->
-<script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.js"></script>
-
-<!-- Custom JS to Initialize FlipDown -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Target date: October 4th, 2024, 9:30 AM (in local time)
-        const targetDate = new Date('October 4, 2024 09:30:00').getTime() / 1000; // Convert to UNIX timestamp in seconds
-
-        // Initialize FlipDown timer
-        const flipdown = new FlipDown(targetDate)
-            .start()
-            .ifEnded(() => {
-                document.querySelector(".flipdown").innerHTML = `<h2>Timer has Ended</h2>`;
-            });
-    });
-</script>
-
-
-
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
